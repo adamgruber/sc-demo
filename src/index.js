@@ -1,8 +1,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
 import App from './App';
-import registerServiceWorker from './registerServiceWorker';
+import styled, { injectGlobal } from 'styled-components';
 
-ReactDOM.render(<App />, document.getElementById('root'));
-registerServiceWorker();
+injectGlobal`
+  body {
+    font-family: sans-serif;
+  }
+`;
+
+const Wrap = styled.div`
+  display: flex;
+  padding: 2rem;
+  justify-content: center;
+`
+
+ReactDOM.render(<Wrap><App /></Wrap>, document.getElementById('root'));
